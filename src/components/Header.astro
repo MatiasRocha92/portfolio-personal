@@ -1,0 +1,333 @@
+---
+import { siteConfig } from "../config";
+
+const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
+const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+---
+
+<header
+  id="header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 header-animate"
+>
+  <nav class="px-8 py-4 mx-auto max-w-7xl">
+    <!-- Desktop Navigation -->
+    <ul class="hidden md:flex items-center justify-center gap-8">
+      
+      <li class="delay-100 animate-fade-up">
+        <a
+          href="#about"
+          class="relative font-medium text-gray-700 transition-all duration-300 hover:text-black group"
+          style={`--accent-color: ${siteConfig.accentColor}`}
+        >
+          Sobre mí
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--accent-color)] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </li>
+      {
+        hasProjects && (
+          <li class="delay-200 animate-fade-up">
+                    <a
+          href="#projects"
+          class="relative font-medium text-gray-700 transition-all duration-300 hover:text-black group"
+          style={`--accent-color: ${siteConfig.accentColor}`}
+        >
+          Proyectos
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--accent-color)] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+          </li>
+        )
+      }
+      {
+        hasExperience && (
+          <li class="delay-300 animate-fade-up">
+                    <a
+          href="#experience"
+          class="relative font-medium text-gray-700 transition-all duration-300 hover:text-black group"
+          style={`--accent-color: ${siteConfig.accentColor}`}
+        >
+          Experiencia
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--accent-color)] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+          </li>
+        )
+      }
+             {
+         hasEducation && (
+           <li class="animate-fade-up delay-400">
+                     <a
+           href="#education"
+           class="relative font-medium text-gray-700 transition-all duration-300 hover:text-black group"
+           style={`--accent-color: ${siteConfig.accentColor}`}
+         >
+           Educación
+           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--accent-color)] transition-all duration-300 group-hover:w-full"></span>
+         </a>
+           </li>
+         )
+       }
+               {
+          siteConfig.cv && (
+            <li class="delay-500 animate-fade-up">
+              <a
+                href={siteConfig.cv.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                download={siteConfig.cv.filename}
+                class="relative font-medium text-gray-700 transition-all duration-300 hover:text-black group"
+                style={`--accent-color: ${siteConfig.accentColor}`}
+              >
+                CV
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--accent-color)] transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </li>
+          )
+                 }
+     </ul>
+     
+     <!-- Mobile Navigation -->
+     <div class="md:hidden flex items-center justify-between">
+       <!-- Logo/Name -->
+       <div class="text-lg font-bold text-gray-900">
+         {siteConfig.name}
+       </div>
+       
+       <!-- Hamburger Button -->
+       <button
+         id="mobile-menu-button"
+         class="p-2 rounded-md text-gray-700 hover:text-black hover:bg-gray-100 transition-colors"
+         aria-label="Toggle mobile menu"
+       >
+         <svg
+           id="hamburger-icon"
+           class="w-6 h-6"
+           fill="none"
+           stroke="currentColor"
+           viewBox="0 0 24 24"
+         >
+           <path
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             stroke-width="2"
+             d="M4 6h16M4 12h16M4 18h16"
+           />
+         </svg>
+         <svg
+           id="close-icon"
+           class="w-6 h-6 hidden"
+           fill="none"
+           stroke="currentColor"
+           viewBox="0 0 24 24"
+         >
+           <path
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             stroke-width="2"
+             d="M6 18L18 6M6 6l12 12"
+           />
+         </svg>
+       </button>
+     </div>
+     
+           <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden fixed top-0 left-0 right-0 h-screen bg-white border-t border-gray-200 transition-all duration-300 ease-in-out z-40"
+      >
+       <div class="flex flex-col h-full">
+         <!-- Header del menú móvil -->
+         <div class="flex items-center justify-between p-4 border-b border-gray-200">
+           <div class="text-lg font-bold text-gray-900">
+             {siteConfig.name}
+           </div>
+                       <button
+              id="mobile-close-button"
+              class="p-2 rounded-md text-gray-700 hover:text-black hover:bg-gray-100 transition-colors"
+            >
+             <svg
+               class="w-6 h-6"
+               fill="none"
+               stroke="currentColor"
+               viewBox="0 0 24 24"
+             >
+               <path
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 stroke-width="2"
+                 d="M6 18L18 6M6 6l12 12"
+               />
+             </svg>
+           </button>
+         </div>
+         
+         <!-- Links del menú -->
+         <ul class="flex-1 px-8 py-8 space-y-6">
+                   <li>
+            <a
+              href="#about"
+              class="mobile-menu-link block text-lg font-medium text-gray-700 hover:text-black transition-colors"
+            >
+              Sobre mí
+            </a>
+          </li>
+         {
+           hasProjects && (
+                           <li>
+                <a
+                  href="#projects"
+                  class="mobile-menu-link block text-lg font-medium text-gray-700 hover:text-black transition-colors"
+                >
+                  Proyectos
+                </a>
+              </li>
+           )
+         }
+         {
+           hasExperience && (
+                           <li>
+                <a
+                  href="#experience"
+                  class="mobile-menu-link block text-lg font-medium text-gray-700 hover:text-black transition-colors"
+                >
+                  Experiencia
+                </a>
+              </li>
+           )
+         }
+         {
+           hasEducation && (
+                           <li>
+                <a
+                  href="#education"
+                  class="mobile-menu-link block text-lg font-medium text-gray-700 hover:text-black transition-colors"
+                >
+                  Educación
+                </a>
+              </li>
+           )
+         }
+         {
+           siteConfig.cv && (
+                           <li>
+                <a
+                  href={siteConfig.cv.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download={siteConfig.cv.filename}
+                  class="mobile-menu-link block text-lg font-medium text-gray-700 hover:text-black transition-colors"
+                >
+                  CV
+                </a>
+              </li>
+           )
+         }
+         </ul>
+       </div>
+     </div>
+   </nav>
+</header>
+
+<script>
+  // Scroll handler
+  window.addEventListener("scroll", () => {
+    const header = document.getElementById("header");
+    if (window.scrollY > 100) {
+      header?.classList.add("bg-white/80", "backdrop-blur-sm");
+    } else {
+      header?.classList.remove("bg-white/80", "backdrop-blur-sm");
+    }
+  });
+
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const mobileCloseButton = document.getElementById('mobile-close-button');
+    
+    if (mobileMenuButton && mobileMenu && hamburgerIcon && closeIcon) {
+      mobileMenuButton.addEventListener('click', function() {
+        const isOpen = mobileMenu.classList.contains('mobile-menu-open');
+        
+        if (isOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
+    }
+    
+    // Event listener para el botón de cerrar
+    if (mobileCloseButton) {
+      mobileCloseButton.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Event listeners para todos los links del menú móvil
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  });
+
+  // Global functions for onclick handlers
+  function openMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    if (mobileMenu && hamburgerIcon && closeIcon) {
+      mobileMenu.classList.add('mobile-menu-open');
+      hamburgerIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+      document.body.classList.add('menu-open');
+    }
+  }
+
+  function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    if (mobileMenu && hamburgerIcon && closeIcon) {
+      mobileMenu.classList.remove('mobile-menu-open');
+      hamburgerIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      document.body.classList.remove('menu-open');
+    }
+  }
+
+
+</script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Mobile menu animations */
+  #mobile-menu {
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+  }
+  
+  #mobile-menu.mobile-menu-open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  /* Asegurar que el header esté por encima del menú móvil */
+  #header {
+    z-index: 50;
+  }
+  
+  /* Prevent body scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+</style>

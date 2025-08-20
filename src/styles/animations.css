@@ -1,0 +1,114 @@
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-fade-up.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-fade-left.animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-fade-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-fade-right.animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.project-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.project-card.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-tag {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-out;
+}
+
+.skill-tag.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.6s ease-out;
+}
+
+.experience-item.animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.education-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.education-item.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header-animate {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease-out;
+}
+
+.header-animate.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-animate {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.8s ease-out;
+}
+
+.hero-animate.animated {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.footer-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.footer-animate.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }

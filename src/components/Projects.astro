@@ -1,0 +1,118 @@
+---
+import { siteConfig } from "../config";
+const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+---
+
+{
+  hasProjects && (
+    <section id="projects" class="p-8 sm:p-12 md:p-16 lg:p-24">
+      <div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-4 animate-fade-left">
+            <h2 class="font-mono text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
+              Proyectos
+            </h2>
+            <div
+              class="w-[75px] h-[5px] mt-2 rounded-full"
+              style={`background-color: ${siteConfig.accentColor}`}
+            />
+          </div>
+
+          <div class="lg:col-span-8 animate-fade-right">
+            <div class="space-y-8">
+              {siteConfig.projects.map((project, index) => (
+                <div class="project-card group relative" data-index={index}>
+                  <div class="relative overflow-hidden rounded-2xl bg-white shadow-lg border border-gray-200 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2">
+                    {/* Background gradient similar to header */}
+                    <div
+                      class="absolute inset-0 opacity-5 transition-opacity duration-500 group-hover:opacity-10"
+                      style={`background: radial-gradient(ellipse 400px 600px at 0% 0%, ${siteConfig.accentColor}40 0%, ${siteConfig.accentColor}25 20%, ${siteConfig.accentColor}10 40%, rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 0.8) 90%, white 100%)`}
+                    />
+                    
+                    <div class="relative p-6 sm:p-8">
+                      {/* Project number */}
+                      <div class="flex items-center justify-between mb-4">
+                        <span
+                          class="text-sm font-mono text-gray-400 transition-colors duration-300 group-hover:text-blue-600"
+                          style={{ color: siteConfig.accentColor }}
+                        >
+                          0{index + 1}
+                        </span>
+                        <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center transition-all duration-300 group-hover:bg-gray-200 group-hover:scale-110">
+                          <svg
+                            class="w-4 h-4 text-gray-600 transition-transform duration-300 group-hover:rotate-12"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+
+                      {/* Project title */}
+                      <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 font-mono transition-colors duration-300 group-hover:text-gray-800">
+                        {project.name}
+                      </h3>
+
+                      {/* Project description */}
+                      <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 font-mono">
+                        {project.description}
+                      </p>
+
+                      {/* Skills */}
+                      {project.skills && project.skills.length > 0 && (
+                        <div class="flex flex-wrap gap-2 mb-6">
+                          {project.skills.map((skill) => (
+                            <span
+                              class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium font-mono transition-all duration-300 group-hover:bg-gray-200 group-hover:scale-105"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Project link button */}
+                      {project.link && (
+                        <div class="flex justify-end">
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-medium font-mono transition-all duration-300 hover:bg-gray-800 hover:scale-105 group-hover:shadow-lg hover:shadow-xl"
+                            style={`--accent-color: ${siteConfig.accentColor}`}
+                          >
+                            <span>Ver Proyecto</span>
+                            <svg
+                              class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M7 17L17 7M17 7H7M17 7V17"
+                              />
+                            </svg>
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

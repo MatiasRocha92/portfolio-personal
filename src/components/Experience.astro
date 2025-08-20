@@ -1,0 +1,46 @@
+---
+import { siteConfig } from "../config";
+const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
+---
+
+{
+  hasExperience && (
+    <section id="experience" class="p-8 sm:p-12 md:p-16 lg:p-24">
+      <div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-3 animate-fade-left">
+            <h2 class="font-mono text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
+              Experiencia
+            </h2>
+            <div
+              class="w-[75px] h-[5px] mt-2 rounded-full"
+              style={`background-color: ${siteConfig.accentColor}`}
+            />
+          </div>
+
+          <div class="lg:col-span-8 lg:col-start-6 animate-fade-right">
+            <div class="space-y-6 max-w-2xl mx-auto">
+              {
+                Array.isArray(siteConfig.experience) 
+                  ? siteConfig.experience.map((paragraph, index) => (
+                      <div class="experience-item">
+                        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600 text-justify">
+                          {paragraph}
+                        </p>
+                      </div>
+                    ))
+                  : (
+                      <div class="experience-item">
+                        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600 text-justify">
+                          {siteConfig.experience}
+                        </p>
+                      </div>
+                    )
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
