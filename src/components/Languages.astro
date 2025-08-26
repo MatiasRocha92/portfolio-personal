@@ -1,0 +1,175 @@
+---
+import { siteConfig } from "../config";
+const hasLanguages = siteConfig.languages && siteConfig.languages.length > 0;
+const hasTools = siteConfig.tools && siteConfig.tools.length > 0;
+const hasStudying = siteConfig.studying && siteConfig.studying.length > 0;
+---
+
+{
+  (hasLanguages || hasTools || hasStudying) && (
+    <section id="languages" class="p-8 sm:p-12 md:p-16 lg:p-24">
+      <div class="space-y-16">
+        {/* Lenguajes */}
+        {hasLanguages && (
+          <div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+              <div class="lg:col-span-4 animate-fade-left">
+                <h2 class="font-mono text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
+                  Lenguajes
+                </h2>
+                <div
+                  class="w-[75px] h-[5px] mt-2 rounded-full"
+                  style={`background-color: ${siteConfig.accentColor}`}
+                />
+              </div>
+
+              <div class="lg:col-span-8 animate-fade-right">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {siteConfig.languages.map((language, index) => (
+                    <div class="language-item group">
+                      <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all duration-300 hover:-translate-y-1 text-center">
+                        {/* Icono del lenguaje */}
+                        <div class="flex justify-center mb-4">
+                          <div 
+                            class="w-12 h-12 flex items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110"
+                            style={`background-color: ${language.color}20`}
+                          >
+                            <div 
+                              class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+                              style={`color: ${language.color}`}
+                              set:html={language.icon}
+                            >
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Nombre del lenguaje */}
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 font-mono">
+                          {language.name}
+                        </h3>
+
+                        {/* Nivel */}
+                        <div class="flex items-center justify-center">
+                          <span 
+                            class="px-3 py-1 rounded-full text-sm font-medium font-mono"
+                            style={`background-color: ${language.color}20; color: ${language.color}`}
+                          >
+                            {language.level}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Herramientas */}
+        {hasTools && (
+          <div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+              <div class="lg:col-span-4 animate-fade-left">
+                <h2 class="font-mono text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
+                  Herramientas
+                </h2>
+                <div
+                  class="w-[75px] h-[5px] mt-2 rounded-full"
+                  style={`background-color: ${siteConfig.accentColor}`}
+                />
+              </div>
+
+              <div class="lg:col-span-8 animate-fade-right">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                  {siteConfig.tools.map((tool, index) => (
+                    <div class="language-item group">
+                      <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all duration-300 hover:-translate-y-1 text-center">
+                        {/* Icono de la herramienta */}
+                        <div class="flex justify-center mb-4">
+                          <div 
+                            class="w-12 h-12 flex items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110"
+                            style={`background-color: ${tool.color}20`}
+                          >
+                            <div 
+                              class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+                              style={`color: ${tool.color}`}
+                              set:html={tool.icon}
+                            >
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Nombre de la herramienta */}
+                        <h3 class="text-lg font-semibold text-gray-900 font-mono">
+                          {tool.name}
+                        </h3>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Estudiando */}
+        {hasStudying && (
+          <div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+              <div class="lg:col-span-4 animate-fade-left">
+                <h2 class="font-mono text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
+                  Estudiando
+                </h2>
+                <div
+                  class="w-[75px] h-[5px] mt-2 rounded-full"
+                  style={`background-color: ${siteConfig.accentColor}`}
+                />
+              </div>
+
+              <div class="lg:col-span-8 animate-fade-right">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {siteConfig.studying.map((study, index) => (
+                    <div class="language-item group">
+                      <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all duration-300 hover:-translate-y-1 text-center">
+                        {/* Icono del lenguaje */}
+                        <div class="flex justify-center mb-4">
+                          <div 
+                            class="w-12 h-12 flex items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110"
+                            style={`background-color: ${study.color}20`}
+                          >
+                            <div 
+                              class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+                              style={`color: ${study.color}`}
+                              set:html={study.icon}
+                            >
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Nombre del lenguaje */}
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 font-mono">
+                          {study.name}
+                        </h3>
+
+                        {/* Badge de estudiando */}
+                        <div class="flex items-center justify-center">
+                          <span 
+                            class="px-3 py-1 rounded-full text-sm font-medium font-mono"
+                            style={`background-color: ${study.color}20; color: ${study.color}`}
+                          >
+                            Estudiando
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
