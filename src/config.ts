@@ -130,13 +130,7 @@ export const siteConfig: SiteConfig = {
       link: "https://primer-carrito-900021.netlify.app/",
       skills: ["HTML", "CSS", "Javascript"],
     },
-    {
-      name: "Mi Primer Calculadora",
-      description: "Una calculadora simple con la posibilidad de realizar operaciones básicas.",
-      image: "/images/task-app.jpg",
-      link: "https://klculador-01.netlify.app/",
-      skills: ["HTML", "CSS", "Javascript"],
-    },
+
   ],
   experience: [
     {
