@@ -130,7 +130,7 @@ import { siteConfig } from "../config";
       height="100%"
       stroke-width={0}></rect>
   </svg>
-  <div class="flex items-center h-full p-8 mx-auto sm:p-12 md:p-24">
+  <div class="flex items-center justify-between h-full p-8 mx-auto sm:p-12 md:p-24">
     <div>
       <h2
         class="text-xl font-bold tracking-tight text-gray-700 hero-animate text-pretty sm:text-2xl md:text-5xl"
@@ -152,6 +152,20 @@ import { siteConfig } from "../config";
       >
         {siteConfig.title}
       </p>
+    </div>
+    
+    {/* Foto del perfil */}
+    <div class="hidden lg:flex items-center justify-center">
+      <div 
+        class="w-96 h-96 rounded-full overflow-hidden border-4 shadow-2xl hero-animate transition-all duration-300 hover:scale-110 hover:shadow-3xl"
+        style={`border-color: ${siteConfig.accentColor}`}
+      >
+        <img
+          src="/images/profile-photo.png"
+          alt="Matias Rocha - Desarrollador Full Stack"
+          class="w-full h-full object-cover"
+        />
+      </div>
     </div>
   </div>
   <div
