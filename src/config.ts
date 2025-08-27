@@ -40,6 +40,14 @@ interface Studying {
   icon: string;
 }
 
+interface Experience {
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+  details: string;
+}
+
 interface SiteConfig {
   name: string;
   title: string;
@@ -53,7 +61,7 @@ interface SiteConfig {
   aboutMe: string[];
   skills: string[];
   projects: Project[];
-  experience: string[];
+  experience: Experience[];
   education: Education[];
   languages: Language[];
   tools: Tool[];
@@ -131,19 +139,39 @@ export const siteConfig: SiteConfig = {
     },
   ],
   experience: [
-    "He liderado equipos en situaciones donde tener la herramienta correcta significaba la diferencia entre el éxito y el fracaso. Desde equipos de rescate hasta centros de comando, he visto la importancia crítica de tener sistemas que sean funcionales en el campo y robustos en su núcleo.",
-    "Esa es mi visión como desarrollador Full-Stack. Construyo interfaces de Frontend que se sienten como herramientas intuitivas y fiables para el usuario. Y desarrollo un Backend que actúa como el motor de esa herramienta: potente, eficiente y a prueba de fallos.",
-    "No solo creo aplicaciones; construyo el equipo completo que se necesita para superar un desafío.",
+    {
+      title: "Desarrollador Full-Stack (Freelance)",
+      company: "SpaceX",
+      period: "04-2021 | 6 meses",
+      description: "Contribuí al desarrollo de una aplicación web interna para la gestión del inventario de alimentos en todas las cafeterías de las instalaciones de SpaceX.",
+      details: "En el Backend, contribui en el desarrollo de APIs RESTful para manejar la lógica de negocio, asegurando la comunicación en tiempo real entre la base de datos y la interfaz de usuario para un control de stock preciso."
+    },
+    {
+      title: "Liderazgo de Equipos",
+      company: "Servicio Nacional de Manejo del Fuego / Defensa Civil",
+      period: "2017 - 2022",
+      description: "He liderado equipos en situaciones donde tener la herramienta correcta significaba la diferencia entre el éxito y el fracaso. Desde equipos de rescate hasta centros de comando, he visto la importancia crítica de tener sistemas que sean funcionales en el campo y robustos en su núcleo.",
+      details: "Esa es mi visión como desarrollador Full-Stack. Construyo interfaces de Frontend que se sienten como herramientas intuitivas y fiables para el usuario. Y desarrollo un Backend que actúa como el motor de esa herramienta: potente, eficiente y a prueba de fallos."
+    },
+    {
+      title: "Desarrollo de Soluciones Completas",
+      company: "Proyectos Personales",
+      period: "2022 - Presente",
+      description: "No solo creo aplicaciones; construyo el equipo completo que se necesita para superar un desafío.",
+      details: "Desarrollo soluciones end-to-end que abarcan desde la concepción hasta el despliegue, aplicando la misma disciplina y enfoque analítico que me caracterizó en mis roles anteriores."
+    },
   ],
   education: [
     {
-      school: "Autodidacta / Plataformas Online",
+      school: "Autodidacta / Plataformas Online (bootcamps)",
       degree: "Desarrollo Web Full Stack",
       dateRange: "2022 - Presente",
       achievements: [
         "Formación continua y práctica en tecnologías Frontend y Backend.",
         "Desarrollo de proyectos personales para aplicar y validar conocimientos.",
         "Enfoque en tecnologías modernas como Astro, React y Node.js.",
+        "Desarrollador Full-Stack Codehouse (2021-2022)",
+        "Harvard CS50's Web Programming with Python and JavaScript (2023 - 2024)",
       ],
     },
     {
@@ -239,10 +267,10 @@ export const siteConfig: SiteConfig = {
       icon: `<svg viewBox="0 0 512 384" xmlns="http://www.w3.org/2000/svg"><path fill="#CF649A" d="M441 221c-18 0-34 4-47 10-5-9-9-17-10-24s-2-11-1-20 6-21 6-22c0 0-1-5-11-5-11 0-20 2-21 5l-4 15c-2 9-20 43-31 60-4-7-7-13-7-17-1-8-2-12-1-21s6-20 6-21-1-6-11-6c-11 0-20 2-21 5l-4 15-34 76-8 18c-2 4 0 0 0 1l-3 5-4 5s-1-7 1-16c3-19 12-49 12-51 0 0 2-5-6-8-7-3-9 2-10 2l-1 1s8-34-16-34c-14 0-35 17-45 31l-34 19-17 9-1-1c-29-31-82-52-79-93 0-15 6-54 101-102 79-39 141-28 152-4 16 34-33 97-115 106-31 3-47-9-51-13-4-5-5-5-7-4s-1 5 0 8c3 6 13 17 30 23 15 5 51 8 95-9 49-19 88-72 77-117-12-45-87-60-157-35-43 15-88 39-121 70-39 36-45 68-43 81 10 47 74 78 100 100l-3 2c-13 7-63 33-75 60-14 31 2 53 13 56 33 10 68-7 86-34 18-28 16-64 8-80l-1-1 11-6 18-10c-3 9-5 19-6 34-2 17 6 40 15 49 4 4 9 4 12 4 11 0 16-9 22-20l13-28s-8 41 13 41c7 0 15-9 18-14l1-1 1-2 20-37 25-57 5 20c2 8 7 16 10 24l-4 7-8 10c-10 12-23 26-24 30-2 5-2 8 2 11 3 2 8 2 13 2l18-4 17-9c10-7 16-18 15-32 0-7-3-15-6-22l3-4c16-23 28-49 28-49l5 21 9 20a89 89 0 0 0-27 36c-6 17-2 24 7 26 4 1 10-1 14-3 5-1 11-4 17-8 10-8 20-18 19-32 0-6-2-13-4-19 12-5 29-8 49-5 45 5 54 33 52 44-2 12-11 18-14 20l-4 4c1 2 2 2 5 2 3-1 23-10 24-31 1-28-25-58-71-57zM97 336c-14 16-35 23-44 17-9-5-6-29 13-46 11-10 25-20 34-26l9-5 1-1 3-1c6 24 0 45-16 62zm108-73c-5 13-16 45-22 43-6-1-9-26-2-50 4-12 13-26 18-32 8-9 17-12 19-8 3 5-10 39-13 47zm89 43-5 1v-2l16-17 9-11v1c0 14-14 24-20 28zm68-16c-2-1-1-5 4-16 2-5 7-13 15-20l2 9c0 18-13 24-21 27z"/></svg>`,
     },
     {
-      name: "Figma",
-      level: "Intermedio",
-      color: "#F24E1E",
-      icon: `<svg viewBox="0 0 54 80" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#figma__clip0_912_3)"><path d="M13.3333 80.0002C20.6933 80.0002 26.6667 74.0268 26.6667 66.6668V53.3335H13.3333C5.97333 53.3335 0 59.3068 0 66.6668C0 74.0268 5.97333 80.0002 13.3333 80.0002Z" fill="#0ACF83"/><path d="M0 39.9998C0 32.6398 5.97333 26.6665 13.3333 26.6665H26.6667V53.3332H13.3333C5.97333 53.3332 0 47.3598 0 39.9998Z" fill="#A259FF"/><path d="M0 13.3333C0 5.97333 5.97333 0 13.3333 0H26.6667V26.6667H13.3333C5.97333 26.6667 0 20.6933 0 13.3333Z" fill="#F24E1E"/><path d="M26.6667 0H40.0001C47.3601 0 53.3334 5.97333 53.3334 13.3333C53.3334 20.6933 47.3601 26.6667 40.0001 26.6667H26.6667V0Z" fill="#FF7262"/><path d="M53.3334 39.9998C53.3334 47.3598 47.3601 53.3332 40.0001 53.3332C32.6401 53.3332 26.6667 47.3598 26.6667 39.9998C26.6667 32.6398 32.6401 26.6665 40.0001 26.6665C47.3601 26.6665 53.3334 32.6398 53.3334 39.9998Z" fill="#1ABCFE"/></g><defs><clipPath id="figma__clip0_912_3"><rect fill="white"/></clipPath></defs></svg>`,
+       name: "Figma",
+       level: "Intermedio",
+       color: "#F24E1E",
+       icon: "/figma.svg",
     },
     {
       name: "Docker",
@@ -265,7 +293,7 @@ export const siteConfig: SiteConfig = {
     {
       name: "GitHub",
       color: "#181717",
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"/></svg>`,
+      icon: `<svg viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="scale(64)" fill="#000000"/></svg>`,
     },
     {
       name: "npm",

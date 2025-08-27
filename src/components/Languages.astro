@@ -15,7 +15,7 @@ const hasStudying = siteConfig.studying && siteConfig.studying.length > 0;
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
               <div class="lg:col-span-4 animate-fade-left">
                 <h2 class="font-mono text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-                  Lenguajes
+                  Habilidades
                 </h2>
                 <div
                   class="w-[75px] h-[5px] mt-2 rounded-full"
@@ -34,12 +34,20 @@ const hasStudying = siteConfig.studying && siteConfig.studying.length > 0;
                             class="w-12 h-12 flex items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110"
                             style={`background-color: ${language.color}20`}
                           >
-                            <div 
-                              class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
-                              style={`color: ${language.color}`}
-                              set:html={language.icon}
-                            >
-                            </div>
+                            {language.icon.startsWith('<svg') ? (
+                              <div 
+                                class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+                                style={`color: ${language.color}`}
+                                set:html={language.icon}
+                              >
+                              </div>
+                            ) : (
+                              <img 
+                                src={language.icon} 
+                                alt={`${language.name} icon`}
+                                class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+                              />
+                            )}
                           </div>
                         </div>
 
@@ -91,12 +99,20 @@ const hasStudying = siteConfig.studying && siteConfig.studying.length > 0;
                             class="w-12 h-12 flex items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110"
                             style={`background-color: ${tool.color}20`}
                           >
-                            <div 
-                              class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
-                              style={`color: ${tool.color}`}
-                              set:html={tool.icon}
-                            >
-                            </div>
+                            {tool.icon.startsWith('<svg') ? (
+                              <div 
+                                class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+                                style={`color: ${tool.color}`}
+                                set:html={tool.icon}
+                              >
+                              </div>
+                            ) : (
+                              <img 
+                                src={tool.icon} 
+                                alt={`${tool.name} icon`}
+                                class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+                              />
+                            )}
                           </div>
                         </div>
 
@@ -138,12 +154,20 @@ const hasStudying = siteConfig.studying && siteConfig.studying.length > 0;
                             class="w-12 h-12 flex items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110"
                             style={`background-color: ${study.color}20`}
                           >
-                            <div 
-                              class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
-                              style={`color: ${study.color}`}
-                              set:html={study.icon}
-                            >
-                            </div>
+                            {study.icon.startsWith('<svg') ? (
+                              <div 
+                                class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+                                style={`color: ${study.color}`}
+                                set:html={study.icon}
+                              >
+                              </div>
+                            ) : (
+                              <img 
+                                src={study.icon} 
+                                alt={`${study.name} icon`}
+                                class="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+                              />
+                            )}
                           </div>
                         </div>
 
