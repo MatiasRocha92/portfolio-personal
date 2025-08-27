@@ -13,7 +13,7 @@ Mi portfolio personal desarrollado con Astro y Tailwind CSS.
 
 ## Vista Previa
 
-Para ver una vista previa en vivo del sitio, [haz clic aquí](https://portfolio-personal-six-kappa.vercel.app/).
+Para ver una vista previa en vivo del sitio, [haz clic aquí](https://matiasrocha.vercel.app/).
 
 ## Tecnologías
 
