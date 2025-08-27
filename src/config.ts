@@ -99,7 +99,7 @@ export const siteConfig: SiteConfig = {
       name: "Portfolio Personal",
       description: "Portfolio profesional desarrollado con Astro y Tailwind CSS. Diseño moderno y responsive que muestra mis habilidades y proyectos de manera elegante.",
       image: "/images/portfolio.jpg",
-      link: "https://github.com/MatiasRocha92/Minimal-portfolio",
+      link: "https://github.com/MatiasRocha92/portfolio-personal",
       skills: ["Astro", "Tailwind CSS", "TypeScript"],
     },
     {
