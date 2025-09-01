@@ -70,7 +70,7 @@ interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: "Matias Rocha",
-  title: "Desarrollador Full Stack Trainee",
+  title: "Desarrollador Full Stack Jr",
   description: "Sitio web portfolio de Matias Rocha",
   accentColor: "#2A7B9B",
   social: {
