@@ -85,7 +85,7 @@ export const siteConfig: SiteConfig = {
   },
   aboutMe: [
     "Vengo de un mundo donde cada decisión cuenta y la resolución de problemas bajo presión es la norma. Durante años, mi campo de trabajo fue la logística y la gestión de emergencias, liderando equipos en terrenos complejos y planificando operaciones críticas. Esa experiencia forjó en mí una mentalidad analítica y una calma que hoy aplico a un nuevo tipo de desafío: el desarrollo de software.",
-    "Como desarrollador Full-Stack autodidacta, he canalizado mi pasión por aprender y construir soluciones desde cero. La misma disciplina que me llevó a coordinar operativos complejos, la utilizo ahora para escribir código limpio, eficiente y escalable. Disfruto de todo el ciclo de vida del desarrollo, desde la concepción de una idea hasta su despliegue final.", 
+    "Como desarrollador Full-Stack, he canalizado mi pasión por aprender y construir soluciones desde cero. La misma disciplina que me llevó a coordinar operativos complejos, la utilizo ahora para escribir código limpio, eficiente y escalable. Disfruto de todo el ciclo de vida del desarrollo, desde la concepción de una idea hasta su despliegue final.", 
     "Busco mi primera oportunidad en el sector IT para aportar una perspectiva diferente, una ética de trabajo sólida y un compromiso total para resolver problemas, ya sea en una línea de código o en un proyecto a gran escala.",
   ],
   skills: [
