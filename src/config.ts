@@ -80,8 +80,8 @@ export const siteConfig: SiteConfig = {
     github: "https://github.com/MatiasRocha92",
   },
   cv: {
-    url: "/cv/Curriculum-vitae.pdf",
-    filename: "Curriculum-vitae.pdf",
+    url: "/cv/Curriculum-Vitae.pdf",
+    filename: "Curriculum-Vitae.pdf",
   },
   aboutMe: [
     "Vengo de un mundo donde cada decisión cuenta y la resolución de problemas bajo presión es la norma. Durante años, mi campo de trabajo fue la logística y la gestión de emergencias, liderando equipos en terrenos complejos y planificando operaciones críticas. Esa experiencia forjó en mí una mentalidad analítica y una calma que hoy aplico a un nuevo tipo de desafío: el desarrollo de software.",
